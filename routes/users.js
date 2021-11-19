@@ -5,5 +5,9 @@ const { example, example2,exampleWithDB } = require('../controllers/users');
 router.route('/')
     .get(exampleWithDB)
     
+const { exampleWithDB } = require('../controllers/users');
+
+router.route('/')
+    .get(exampleWithDB);
 
 module.exports = router;
