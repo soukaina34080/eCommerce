@@ -1,8 +1,9 @@
 const router = require('express-promise-router')();
 
-const { example, example2 } = require('../controllers/users');
+const { example, example2,exampleWithDB } = require('../controllers/users');
 
 router.route('/')
-    .get(example, example2);
+    .get(exampleWithDB)
+    
 
 module.exports = router;
