@@ -34,7 +34,7 @@ const SignIn = () => {
         <input type="submit" value="Login" />
         <br/>
         <br/>
-        <a href="/">You don't have an account ? Please click Here to signup !</a>
+        <a href="/signup">You don't have an account ? Please click Here to signup !</a>
       </form>
     </div>
   );

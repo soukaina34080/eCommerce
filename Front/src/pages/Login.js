@@ -5,8 +5,6 @@ import SignIn from '../components/Signin/SignIn';
 const Login = () => {
   return (
     <div>
-      <br/>
-      <br/>
       <SignIn/>
     </div>
   );
