@@ -1,17 +1,18 @@
 require('dotenv').config({ path: `./config/${process.env.NODE_ENV}.env` })
 
 const express = require('express');
-
 const app = express();
-
 const cors = require('cors');
+
 app.use(cors())
 
 app.use(express.json());
 
 const usersRoute = require('./routes/users');
+const authRoute = require('./routes/auth');
 
 app.use('/api/users', usersRoute);
+app.use('api/auth/register',authRoute);
 
 app.get('/api', (_, res) => res.send("Hello from API v1"));
 

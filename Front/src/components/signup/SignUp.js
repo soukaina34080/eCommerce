@@ -1,10 +1,26 @@
 import React, {useState} from "react";
+import axios from 'axios';
 
 
 const SignUp = () => {
-  /*const [firstName, setFirstName] = useState('')
-  const [lasttName, setLasttName] = useState('')
-  const [firstName, setFirstName] = useState('')*/
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [role, setRole] = useState('')
+
+  const register = () => {
+    axios.post(`http://localhost:4000/api/auth`, {
+      nom:lastName,
+      prenom:firstName,
+      email:email, 
+      mot_de_passe:password,
+      role:role,
+    }).then((response)=>{
+      console.log(response);
+    });
+  };
+
 
 
 
@@ -15,7 +31,7 @@ const SignUp = () => {
           <br/>
           <br/>
           <br/>
-        <form action=""  /*onSubmit={handleRegister}*/>
+        <form>
         <h1>Create an account </h1>
           <br/>
           <br/>
@@ -24,10 +40,9 @@ const SignUp = () => {
             name="firstName"
             id="name"
             placeholder="First name*"
-            
-            
-            /*onChange={(e) => setFirst_name(e.target.value)}
-            value={first_name}*/
+            onChange={(e) => {
+              setFirstName(e.target.value);
+            }} 
           />
           <div className="firstName error"></div>
           <br /> 
@@ -37,8 +52,9 @@ const SignUp = () => {
             id="name"
             placeholder="Last name*"
             
-            /*onChange={(e) => setLast_name(e.target.value)}
-            value={last_name}*/
+            onChange={(e) => {
+              setLastName(e.target.value);
+            }}
           />
           <div className="firstName error"></div>
           <br /> 
@@ -47,8 +63,9 @@ const SignUp = () => {
             name="email"
             id="email"
             placeholder="Enter an email adress*"
-            /*onChange={(e) => setEmail(e.target.value)}
-            value={email}*/
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
           />
           <div className="email error"></div>
           <br />
@@ -57,32 +74,30 @@ const SignUp = () => {
             name="password"
             id="password"
             placeholder="Password*"
-            /*onChange={(e) => setPassword(e.target.value)}
-            value={password}*/
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
           />
           <div className="password error"></div>
           <br />
 
-          <input
-            type="password"
-            name="password"
-            id="password-conf"
-            placeholder="Repeat your password*"
-            /*onChange={(e) => setControlPassword(e.target.value)}
-            value={controlPassword}*/
-          />
-          <div className="password-confirm error"></div>
-          <br />
           <label for="role">Role : </label>
           <br />
-            <select name="role" id="role">
-            <option value="seller">Vendeur</option>
-            <option value="customer">Client</option>
+            <select 
+            name="role" 
+            id="role" 
+            onChange={(e)=>{
+              const selectedRole = e.target.value;
+             setRole(selectedRole);
+            }}
+            >
+            <option value="Vendeur">Vendeur</option>
+            <option value="Client">Client</option>
             </select> 
            
            <br/><br/>
            
-        <input type="submit" value="Signup" />
+        <input type="submit" value="Signup" onClick={register} />
         </form>
       </div>
       }
