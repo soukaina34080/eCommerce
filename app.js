@@ -8,9 +8,9 @@ app.use(cors())
 
 app.use(express.json());
 
-const usersRoute = require('./routes/users');
-const authRoute = require('./routes/auth');
-const productRoute = require('./routes/product');
+const usersRoute = require('./Backend/routes/users');
+const authRoute = require('./Backend/routes/auth');
+const productRoute = require('./Backend/routes/product');
 
 
 app.use('/api/users', usersRoute);

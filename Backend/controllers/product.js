@@ -1,4 +1,4 @@
-const pool = require('../config/database');
+const pool = require('../../BDD/config/database');
 
 module.exports.getProduct = async (req, res) => {
         let connexion;
