@@ -31,7 +31,7 @@ export default class ProduitList extends React.Component {
                 <p className="cardPart">
                   <span className="cardTitle">Price :</span> {product.prix}
                 </p>
-                <a href="/product">Info Product</a>
+                <a href={'/product/' + product.idProduit }>Info Product</a>
               </div>
             </div>
           </li>

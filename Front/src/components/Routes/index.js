@@ -4,6 +4,7 @@ import Login from '../../pages/Login';
 import Home from '../../pages/Home';
 import ProductsInfo from '../../pages/ProductsInfo';
 import Register from '../../pages/Register';
+import InfoProd from '../infoProd/InfoProd';
 
 
 
@@ -15,6 +16,7 @@ const index = () => {
             <Route path="/login" exact element={<Login/>}/>
             <Route path="/signup" exact element={<Register/>}/>
             <Route path="/product" exact element={<ProductsInfo/>}/>
+            <Route path="/product/:idProduit" exact element={<InfoProd/>}/>
             <Route path="*" element={<Navigate to ="/" />}/>
             </Routes> 
         </Router>
