@@ -1,9 +1,8 @@
-import React from 'react';
-
+/*import React from 'react';
 import axios from 'axios';
 
 export default class PersonList extends React.Component {
-  state = {
+  state = { 
     users: []
   }
 
@@ -15,7 +14,7 @@ export default class PersonList extends React.Component {
         this.setState({ users });
       })
   }
-
+ 
   render() {
     return (
       
@@ -25,4 +24,4 @@ export default class PersonList extends React.Component {
       
     )
   }
-}
+}*/

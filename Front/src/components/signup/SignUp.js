@@ -10,7 +10,7 @@ const SignUp = () => {
   const [role, setRole] = useState('')
 
   const register = () => {
-    axios.post(`http://localhost:4000/api/auth`, {
+    axios.post(`http://localhost:4000/api/auth/register`, {
       nom:lastName,
       prenom:firstName,
       email:email, 
@@ -20,10 +20,6 @@ const SignUp = () => {
       console.log(response);
     });
   };
-
-
-
-
   return (
     <>
       {
